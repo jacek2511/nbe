@@ -41,7 +41,7 @@ class Client:
                 raise TokenInvalid()
             absolute_url = urljoin(
                 self.BASE_URL,
-                "%s?token=%s" % (url, self.token)
+                "%stoken=%s" % (url, self.token)
             )
             logger.debug(absolute_url)
             with request.urlopen(absolute_url) as data:
@@ -51,10 +51,11 @@ class Client:
             return self.make_request(url, *args, **kwargs)
 
     def update_controller_data(self):
-        self.cached_data = self.make_request("v2/dataout2/controllerdata2.php")
+        self.cached_data = self.make_request("v16bckbeta/dataout2/controllerdata2.php?screen=b1%2C17%2Cb2%2C5%2Cb3%2C4%2Cb4%2C6%2Cb5%2C12%2Cb6%2C14%2Cb7%2C15%2Cb8%2C16%2Cb9%2C9%2Cb10%2C7%2Cd1%2C3%2Cd2%2C4%2Cd3%2C4%2Cd4%2C0%2Cd5%2C0%2Cd6%2C0%2Cd7%2C0%2Cd8%2C0%2Cd9%2C0%2Cd10%2C0%2Ch1%2C2%2Ch2%2C3%2Ch3%2C5%2Ch4%2C13%2Ch5%2C4%2Ch6%2C1%2Ch7%2C9%2Ch8%2C10%2Ch9%2C7%2Ch10%2C8%2Cw1%2C2%2Cw2%2C3%2Cw3%2C9%2Cw4%2C4%2Cw5%2C5&")
         self.last_fetch = time.time()
 
     def controller_data(self):
         if not self.last_fetch or (time.time() - self.last_fetch) > self.cache_time_seconds:
             self.update_controller_data()
         return ControllerData(self.cached_data)
+
