@@ -157,6 +157,10 @@ class ControllerData:
     def state(self):                                                                           
         return STATE_BY_VALUE.get(self.data['miscdata']['state']['value']).name      
 
+    @property                                                                            
+    def clock(self):                                                                           
+        return self.data['miscdata']['clock']['value']      
+
     @property                                                                                         
     def state_pom(self):                                                                                  
         return self.data['miscdata']['state']['value']                       
