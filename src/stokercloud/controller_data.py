@@ -27,6 +27,7 @@ class State(Enum):
     ZATRZYM_TempOsiag = 'lng_state_9'
     BLAD_ROZPAL = 'lng_state_13'
     WYLACZONY = 'lng_state_14'
+    ZATRZYM_BrakPelletu = 'lng_state_20'
     CZUW_Harmon = 'lng_state_23'
     CZUW_TempOsiag = 'lng_state_25'
 
