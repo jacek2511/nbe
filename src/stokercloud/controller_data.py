@@ -24,6 +24,7 @@ class State(Enum):
     ROZPALANIE_2 = 'lng_state_4'
     MOC = 'lng_state_5'
     CWU = 'lng_state_7'
+    ZATRZYM_TempOsiag = 'lng_state_9'
     BLAD_ROZPAL = 'lng_state_13'
     WYLACZONY = 'lng_state_14'
     CZUW_Harmon = 'lng_state_23'
